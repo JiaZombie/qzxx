@@ -1,20 +1,18 @@
 # Logo (Font Awesome Class)
-fa_logo: fa-cube
+fa_logo: fa-hourglass-start
 
 # Header
 menu:
   Home: /
   Archives: /archives
-  About: /about.html
   Tags: /tags
   Categories: /categories
-  Contact: /contact.html
 
 # Default post title
 default_post_title: Untitled
 
 # Archive Date Format
-archive_date_format: MMM YYYY
+archive_date_format: YYYY-MM-DD
 
 # Comments.
 comments:
