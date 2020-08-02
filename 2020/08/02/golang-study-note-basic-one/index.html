@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head tag -->
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--Description-->
+  
+  <meta name="description" content="一只小僵尸">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="JiaZombie">
+  
+
+  <!--Open Graph Title-->
+  
+  <meta property="og:title" content="Golang 笔记——结构">
+  
+
+  <!--Open Graph Description-->
+  
+  <meta property="og:description" content="一只小僵尸">
+  
+
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="jiazombie">
+
+  <!--Type page-->
+  
+  <meta property="og:type" content="article">
+  
+
+  <!--Page Cover-->
+  
+
+  <meta name="twitter:card" content="summary">
+  
+
+  <!-- Title -->
+  
+  <title>Golang 笔记——结构 - jiazombie</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+  <!-- Custom Fonts -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Google Analytics -->
+  <!-- 
+ -->
+</head>
+
+
+  <body>
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <p class="cmd-prompt">$ man</p>
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+      <!-- Main Content -->
+      <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+  <div class="logo">
+    <a href="/"
+      ><i
+        class="logo-icon fa fa-code"
+        aria-hidden="true"
+      ></i
+    ></a>
+    
+  </div>
+</header>
+
+
+        <section class="main">
+            <p class="cmd-prompt">$ cat Golang 笔记——结构</p>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2020/08/02/golang-study-note-basic-one/">
+                Golang 笔记——结构
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-08-02</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/golang/">golang</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h3 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 包名</span><br><span class="line"><span class="keyword">import</span> 包名</span><br><span class="line"><span class="function"><span class="keyword">func</span>, <span class="title">var</span>, <span class="title">const</span>, <span class="title">type</span> 开头的声明</span></span><br></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">"Hello World!"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数结构"><a href="#函数结构" class="headerlink" title="函数结构"></a>函数结构</h3><blockquote>
+<p> 一个函数的声明由 <code>func</code> 关键字、函数名、参数列表（<code>main</code> 函数为空）、返回值<strong>列表</strong>(可以为空)、放在大括号内的函数体组成，函数体定义函数是用来干什么的</p>
+</blockquote>
+<h3 id="语句结构"><a href="#语句结构" class="headerlink" title="语句结构"></a>语句结构</h3><blockquote>
+<p>Go <strong>不需要</strong>在语句或声明后面使用<strong>分号</strong>，除非有多个语句或者声明出现在同一行。事实上，跟着特定符号后面的换行符被替换为分号，在什么地方换行会影响对 Go 代码的解析。例如，“<code>{</code>” 符号 <strong>必须</strong> 和关键字 <code>func</code> 在同一行，不能独自成行，并且在 <code>x+y</code> 这个表达式中，换行符可以在 <code>+</code> 操作符的后面，但是不能在 <code>+</code> 操作符的前面。</p>
+<p>Go 对代码的格式要求非常严格。 <em>gofmt</em> 工具将代码以标准格式重写，<em>go</em> 工具的 <code>fmt</code> 子命令使用 <em>gofmt</em> 工具来格式化指定包里的所有文件或者当前文件夹中的文件（默认情况下）。</p>
+<p><em>goimports</em> 可以按需管理导入声明的插入和移除。</p>
+</blockquote>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>单行注释以 <em>//</em> 开头，多行注释 <code>/*......*/</code>这种形式， 编译器将会忽略它们。</p>
+<h3 id="变量结构"><a href="#变量结构" class="headerlink" title="变量结构"></a>变量结构</h3><p><code>var</code> 关键字声明变量。变量可以在声明的时候初始化，如果没有明确初始化，它将隐式的初始化为这个类型的空值（数字是 <em>0</em>， 字符串是 *””* ）。</p>
+<p>例子：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基本机构 var 变量名 数据类型</span></span><br><span class="line"><span class="keyword">var</span> a,b <span class="keyword">string</span></span><br><span class="line"><span class="comment">// := 符号用于短变量声明，声明一或多个变量，根据初始化的值给予合适的类型</span></span><br><span class="line">i := <span class="number">1</span></span><br><span class="line"><span class="comment">// 其他形式</span></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">""</span></span><br><span class="line"><span class="keyword">var</span> s <span class="keyword">string</span> = <span class="string">""</span></span><br><span class="line"><span class="comment">// 递增，递减是语句而不是表达式,仅支持后缀，所以 --i, ++i 均不合法</span></span><br><span class="line">i ++</span><br><span class="line">i --</span><br></pre></td></tr></table></figure>
+
+<h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><p><code>for</code> 是 Go 里 <strong>唯一</strong> 的循环语句。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> initialization; condition; post &#123;</span><br><span class="line">    <span class="comment">// 零或者多个语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>for</code> 循环的三个组成部分两边<strong>不用</strong>小括号。大括号是<strong>必须</strong>的，但是左大括号<strong>必须</strong>和 <em>post</em> （后置）语句在同一行 </p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> condition &#123;</span><br><span class="line">    <span class="comment">// 零或者多个语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>三部分都是可以省略的。如果没有 <em>initialization</em> 和 <em>post</em> 语句，分号<strong>可以</strong>省略</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="comment">// 零或者多个语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果三个部分都不存在，循环是无限的，可以通过 <code>break</code> 或者 <code>return</code> 语句进行终止。</p>
+</blockquote>
+<h3 id="条件结构"><a href="#条件结构" class="headerlink" title="条件结构"></a>条件结构</h3><p><code>if</code> 语句中的条件部分也<strong>从不</strong>放在圆括号里面。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> condition &#123;</span><br><span class="line">    <span class="comment">// 语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>switch</code> 语句 <code>default</code> 可以放在任何地方，<strong>不一定</strong>是最后。它<strong>不一定</strong>需要操作数。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> condition &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">        i ++</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        i --</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> x &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> +<span class="number">1</span></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">case</span> x &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="空标识符"><a href="#空标识符" class="headerlink" title="空标识符"></a>空标识符</h3><p><code>_</code> 即下划线。Go 不允许存在无用的临时变量，不如会出现编译错误。解决方案是使用 <em>空标识符</em>。它可以用在任何<strong>语法需要</strong>变量名但是程序逻辑不需要的地方。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> _, arg := <span class="keyword">range</span> os.Args[<span class="number">1</span>:] &#123;</span><br><span class="line">    <span class="comment">// 语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/golang/">#golang</a> <a href="/tags/study/">#study</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @JiaZombie. All right reserved | Design & Hexo JiaZombie
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    <!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script
+  src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js"
+  type="text/javascript"
+  charset="utf-8"
+></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+  </body>
+</html>
